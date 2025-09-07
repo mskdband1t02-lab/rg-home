@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Grid - Raccoon Gang</title>
+    <meta name="description" content="Pulsing neon grid lines creating a futuristic cyberpunk atmosphere.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="screensaver-body">
+    <div class="screensaver-container grid-container">
+        <!-- Close and Home buttons -->
+        <div class="screensaver-controls">
+            <a href="index.html" class="control-btn grid-btn" data-testid="button-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+            </a>
+            <a href="index.html" class="control-btn grid-btn" data-testid="button-close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Title overlay -->
+        <div class="screensaver-title-overlay">
+            <h1 class="screensaver-title grid-title" data-testid="text-screensaver-title">Neon Grid</h1>
+            <p class="screensaver-description grid-desc" data-testid="text-screensaver-description">
+                dreams in electric blue boring grid
+            </p>
+        </div>
+    </div>
+</body>
+</html>

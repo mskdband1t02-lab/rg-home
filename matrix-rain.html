@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Rain - Raccoon Gang</title>
+    <meta name="description" content="Experience the iconic Matrix digital rain effect with cascading green code creating mesmerizing patterns.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="screensaver-body">
+    <div class="screensaver-container matrix-container">
+        <!-- Close and Home buttons -->
+        <div class="screensaver-controls">
+            <a href="index.html" class="control-btn" data-testid="button-home">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+            </a>
+            <a href="index.html" class="control-btn" data-testid="button-close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Matrix rain container -->
+        <div id="matrixContainer" class="matrix-rain-container" data-testid="container-matrix-rain"></div>
+        
+        <!-- Title overlay -->
+        <div class="screensaver-title-overlay">
+            <h1 class="screensaver-title" data-testid="text-screensaver-title">Matrix Rain</h1>
+            <p class="screensaver-description" data-testid="text-screensaver-description">
+                Digital rain cascading through cyberspace
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Matrix Rain Effect
+        function initMatrixRain() {
+            const container = document.getElementById('matrixContainer');
+            const chars = '01アカサタナハマヤラワガザダバパイキシチニヒミリギジヂビピウクスツヌフムユルグズブプエケセテネヘメレゲゾデベペオコソトノホモヨロゴゾドボポヴッン';
+            const columns = Math.floor(window.innerWidth / 14);
+            
+            container.innerHTML = '';
+            
+            for (let i = 0; i < columns; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = `${i * 14}px`;
+                column.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                column.style.animationDelay = `${Math.random() * 2}s`;
+                
+                let text = '';
+                for (let j = 0; j < 30; j++) {
+                    text += chars.charAt(Math.floor(Math.random() * chars.length)) + '<br>';
+                }
+                column.innerHTML = text;
+                
+                container.appendChild(column);
+            }
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', initMatrixRain);
+        
+        // Reinitialize on window resize
+        window.addEventListener('resize', initMatrixRain);
+    </script>
+</body>
+</html>
